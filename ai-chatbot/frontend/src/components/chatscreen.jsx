@@ -145,7 +145,7 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
   //   6. Shows the typing indicator (your brain should call
   //      addAIMessage() when it has a response)
   // ─────────────────────────────────────────────────────────
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // stop browser page reload
 
     const trimmed = text.trim();
@@ -156,14 +156,24 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
     setMessages((prev) => [...prev, userMsg]);
 
     // ← YOUR AI BRAIN receives the text here via this prop
-    onSendMessage(trimmed);
-
     // Clear the input field and reset textarea height
     setText('');
     if (textareaRef.current) textareaRef.current.style.height = 'auto';
 
     // Show typing indicator while brain works
     setIsTyping(true);
+
+    try {
+      const reply = await onSendMessage(trimmed);
+      if (reply) {
+        const aiMsg = { id: uid(), from: 'ai', text: reply, time: new Date() };
+        setMessages((prev) => [...prev, aiMsg]);
+      }
+    } catch (error) {
+      console.error('Failed to send message:', error);
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   // ─────────────────────────────────────────────────────────
