@@ -14,7 +14,12 @@ app.get('/', (req, res) => {
   res.send('AI Chatbot Backend is running');
 });
 
+const chatRoutes = require("./routes/chat.route");
+
+app.use("/api/chat", chatRoutes);
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+ 
