@@ -1,29 +1,45 @@
-function generateReply(message) {
-    const text = message.trim().toLowerCase();
+const parseMessage = require("./parser");
+const detectIntent = require("./intent");
+const detectIntent2 = require("./intent2");
 
-    if (text === "hello" || text === "hi") {
-        return "Hello 👋";
-    }
+function generateReply(message = "") {
+  const text = parseMessage(message);
+  const intent = detectIntent(text);
+  const intent2 = detectIntent2(text);
 
-    if (text === "how are you") {
-        return "I'm doing great! 😊";
-    }
+  if (!text) {
+    return "Please type a message.";
+  }
 
-    if (text === "bye") {
-        return "Goodbye! Have a nice day 👋";
-    }
-    if (text == "fuck you") {
-        return "fuck you to";
-    }
+  if (intent2 === "BADWORDS") {
+    return "Please use respectful language.";
+  }
 
-    if (text == "react") {
-        return "React is a declarative, component-based frontend JavaScript library whose core theory is that the user interface (UI) should be a direct, predictable function of application data (UI = f(state)). Instead of manually manipulating the browser's Document Object Model (DOM) step-by-step when data changes, you simply describe how the UI should look for any given state, and React automatically handles updating the screen"
+  if (intent === "GREETING") {
+    return "Hello!";
+  }
 
-    } else if(text == "what is react") {
-        return "react is an js library wich use for creating the reusable compnent and things";
-    }
+  if (intent === "WELLBEING") {
+    return "I'm doing great!";
+  }
 
-    return "Sorry, I don't understand.";
+  if (intent === "GOODBYE") {
+    return "Goodbye! Have a nice day.";
+  }
+
+  if (intent === "HELP") {
+    return "How can I help you?";
+  }
+
+  if (intent === "BOT_NAME") {
+    return "I was created by Mayur, so I don't have a name for my current state.";
+  }
+
+  if (intent === "THANKS") {
+    return "You're welcome!";
+  }
+
+  return "Sorry, I don't understand.";
 }
 
 module.exports = generateReply;
