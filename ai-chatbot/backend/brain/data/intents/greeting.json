@@ -1,0 +1,8 @@
+{
+  "intent": "GREETING",
+  "patterns": [
+    "^(hi|hy|hello|hey|howdy|sup|yo|hiya)\\b",
+    "\\bgood (morning|afternoon|evening)\\b"
+  ],
+  "responses": ["Hello!"]
+}

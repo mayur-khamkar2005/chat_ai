@@ -1,0 +1,7 @@
+{
+  "intent": "I AM SO SAD",
+  "patterns": [
+    "\\b(i am so sad|im sad|i am sad)\\b"
+  ],
+  "responses": ["sir i am hear for help"]
+}

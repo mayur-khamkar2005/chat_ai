@@ -1,0 +1,8 @@
+{
+  "intent": "BOT_NAME",
+  "patterns": [
+    "\\b(what is your name|whats your name|what's your name)\\b",
+    "\\b(who are you|your name)\\b"
+  ],
+  "responses": ["I was created by Mayur, so I don't have a name for my current state."]
+}

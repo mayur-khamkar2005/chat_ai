@@ -1,0 +1,7 @@
+{
+  "intent": "NICE TO MEET YOU",
+  "patterns": [
+    "\\bnice to meet you\\b"
+  ],
+  "responses": ["nice to meet you to sir"]
+}

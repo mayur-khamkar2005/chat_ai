@@ -57,64 +57,21 @@ extern "C" {
         output[max_len - 1] = '\0';
     }
 
-    EXPORT void detect_intent(const char* message, char* output, int max_len) {
-        if (!message) {
-            strncpy(output, "UNKNOWN", max_len);
-            return;
+    EXPORT int match_pattern(const char* message, const char* pattern) {
+        if (!message || !pattern) {
+            return 0;
         }
-        std::string text(message);
-
-        // GREETING
-        if (std::regex_search(text, std::regex("^(hi|hy|hello|hey|howdy|sup|yo|hiya)\\b", std::regex_constants::icase)) ||
-            std::regex_search(text, std::regex("\\bgood (morning|afternoon|evening)\\b", std::regex_constants::icase))) {
-            strncpy(output, "GREETING", max_len); return;
+        try {
+            std::string text(message);
+            std::regex re(pattern, std::regex_constants::icase);
+            if (std::regex_search(text, re)) {
+                return 1;
+            }
+        } catch (const std::regex_error& e) {
+            // Invalid regex pattern provided from JSON
+            return 0;
         }
-
-        // WELLBEING
-        if (std::regex_search(text, std::regex("\\b(how are you|how are u|how r you|how you doing|how do you do)\\b", std::regex_constants::icase)) ||
-            std::regex_search(text, std::regex("\\b(whats up|what's up)\\b", std::regex_constants::icase))) {
-            strncpy(output, "WELLBEING", max_len); return;
-        }
-
-        // GOODBYE
-        if (std::regex_search(text, std::regex("\\b(bye|goodbye|good bye|see you|see ya|later|take care)\\b", std::regex_constants::icase))) {
-            strncpy(output, "GOODBYE", max_len); return;
-        }
-
-        // HELP
-        if (std::regex_search(text, std::regex("\\b(help|assist|support)\\b", std::regex_constants::icase)) ||
-            std::regex_search(text, std::regex("\\b(can you help|need help)\\b", std::regex_constants::icase))) {
-            strncpy(output, "HELP", max_len); return;
-        }
-
-        // BOT_NAME
-        if (std::regex_search(text, std::regex("\\b(what is your name|whats your name|what's your name)\\b", std::regex_constants::icase)) ||
-            std::regex_search(text, std::regex("\\b(who are you|your name)\\b", std::regex_constants::icase))) {
-            strncpy(output, "BOT_NAME", max_len); return;
-        }
-
-        // THANKS
-        if (std::regex_search(text, std::regex("\\b(thanks|thank you|thx|appreciate it)\\b", std::regex_constants::icase))) {
-            strncpy(output, "THANKS", max_len); return;
-        }
-
-        strncpy(output, "UNKNOWN", max_len);
-    }
-
-    EXPORT void detect_intent2(const char* message, char* output, int max_len) {
-        if (!message) {
-            strncpy(output, "UNKNOWN", max_len);
-            return;
-        }
-        std::string text(message);
-
-        // BADWORDS
-        if (std::regex_search(text, std::regex("\\b(fuck[-\\s]*you|fuck|shit|bitch|asshole)\\b", std::regex_constants::icase)) ||
-            std::regex_search(text, std::regex("\\b(shut[-\\s]*up|shutup|idiot|stupid)\\b", std::regex_constants::icase))) {
-            strncpy(output, "BADWORDS", max_len); return;
-        }
-
-        strncpy(output, "UNKNOWN", max_len);
+        return 0;
     }
 
 }

@@ -1,0 +1,8 @@
+{
+  "intent": "WELLBEING",
+  "patterns": [
+    "\\b(how are you|how are u|how r you|how you doing|how do you do)\\b",
+    "\\b(whats up|what's up)\\b"
+  ],
+  "responses": ["I'm doing great!"]
+}
