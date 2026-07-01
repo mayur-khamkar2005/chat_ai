@@ -55,6 +55,13 @@ def generate_reply(message):
         
     if intent == "THANKS":
         return "You're welcome!"
+    
+    if intent == "NICE TO MEET YOU":
+        return "nice to meet you to sir"
+    
+    if intent == "I AM SO SAD":
+        return "sir i am hear for help"
+    
         
     return "Sorry, I don't understand."
 
