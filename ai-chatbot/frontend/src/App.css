@@ -1,1 +1,83 @@
-/* App specific styles can go here */
+/* ==========================================================================
+   THEME VARIABLES - Premium Soft UI
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bg-primary: #f8fafc;        /* Very light soft blue-grey */
+  --bg-secondary: #ffffff;      /* Pure white for raised elements */
+  --text-primary: #1e293b;      /* Slate 800 for high readability */
+  --text-secondary: #64748b;    /* Slate 500 for secondary text */
+  --border-color: #e2e8f0;      /* Slate 200 for subtle borders */
+  
+  /* Bubbles */
+  --bubble-user-bg: #3b82f6;    /* Soft blue */
+  --bubble-user-text: #ffffff;  
+  --bubble-ai-bg: #ffffff;      /* White bubble for AI */
+  --bubble-ai-text: #1e293b;
+  
+  /* Glassmorphism & Soft Elements */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  --shadow-bubble: 0 4px 15px rgba(0, 0, 0, 0.03);
+  
+  /* Misc */
+  --ai-icon-bg: #f1f5f9;
+  --ai-icon-text: #3b82f6;
+  --compose-bg: #ffffff;
+  --send-btn-bg: #3b82f6;
+  --send-btn-hover: #2563eb;
+  --send-btn-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Colors */
+  --bg-primary: #0f172a;        /* Deep slate */
+  --bg-secondary: #1e293b;      /* Slightly lighter slate */
+  --text-primary: #f8fafc;      /* Off-white text */
+  --text-secondary: #94a3b8;    /* Muted text */
+  --border-color: #334155;      /* Dark borders */
+  
+  /* Bubbles */
+  --bubble-user-bg: #3b82f6;    /* Keep the blue but fits dark mode well */
+  --bubble-user-text: #ffffff;
+  --bubble-ai-bg: #1e293b;      /* Dark bubble for AI */
+  --bubble-ai-text: #f8fafc;
+  
+  /* Glassmorphism & Soft Elements */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  --shadow-bubble: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  /* Misc */
+  --ai-icon-bg: #334155;
+  --ai-icon-text: #f8fafc;
+  --compose-bg: #1e293b;
+  --send-btn-bg: #3b82f6;
+  --send-btn-hover: #60a5fa;
+  --send-btn-text: #ffffff;
+}
+
+/* Base resets & transitions for theme switching */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}

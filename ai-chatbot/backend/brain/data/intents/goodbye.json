@@ -1,0 +1,7 @@
+{
+  "intent": "GOODBYE",
+  "patterns": [
+    "\\b(bye|goodbye|good bye|see you|see ya|later|take care)\\b"
+  ],
+  "responses": ["Goodbye! Have a nice day."]
+}

@@ -1,0 +1,7 @@
+{
+  "intent": "THANKS",
+  "patterns": [
+    "\\b(thanks|thank you|thx|appreciate it)\\b"
+  ],
+  "responses": ["You're welcome!"]
+}
