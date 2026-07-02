@@ -74,13 +74,12 @@ const MessageBubble = ({ msg }) => {
         {/* Bubble */}
         <div style={{
           ...styles.bubble,
-          // Dark for user, light grey for AI  – matches ChatGPT
-          background:   isUser ? '#2F2F2F' : '#F4F4F4',
-          color:        isUser ? '#FFFFFF' : '#0D0D0D',
-          // Rounded except the "tail" corner
+          background: isUser ? 'var(--bubble-user-bg)' : 'var(--bubble-ai-bg)',
+          color:      isUser ? 'var(--bubble-user-text)' : 'var(--bubble-ai-text)',
           borderRadius: isUser
             ? '18px 18px 4px 18px'   // user: flat bottom-right
             : '18px 18px 18px 4px',  // AI:   flat bottom-left
+          boxShadow: isUser ? 'none' : 'var(--shadow-bubble)',
         }}>
           {/* Preserve Shift+Enter newlines */}
           {msg.text.split('\n').map((line, i, arr) => (
@@ -107,6 +106,13 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
   const [text, setText]         = useState('');            // current draft text
   const [messages, setMessages] = useState(SEED_MESSAGES); // full message list
   const [isTyping, setIsTyping] = useState(false);         // typing indicator
+  const [theme, setTheme]       = useState('light');       // UI theme
+
+  // ── Theme Effect ───────────────────────────────────────────
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+  const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
   // ── Refs ───────────────────────────────────────────────────
   const bottomRef   = useRef(null);  // invisible div at bottom – used for auto-scroll
@@ -257,8 +263,17 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
             (as requested).
             ══════════════════════════════════════════════ */}
         <header style={styles.header}>
-          <span style={styles.headerTitle}>AI Assistant</span>
-          <span style={styles.modelBadge}>Model</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={styles.headerTitle}>AI Assistant</span>
+            <span style={styles.modelBadge}>Premium</span>
+          </div>
+          <button 
+            onClick={toggleTheme} 
+            style={styles.themeToggleBtn}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
         </header>
 
         {/* ══════════════════════════════════════════════
@@ -315,7 +330,7 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
                 disabled={!text.trim() || over}
                 style={{
                   ...styles.sendBtn,
-                  background: (!text.trim() || over) ? '#D1D5DB' : '#1A1A1A',
+                  background: (!text.trim() || over) ? 'var(--border-color)' : 'var(--send-btn-bg)',
                   cursor:     (!text.trim() || over) ? 'not-allowed' : 'pointer',
                 }}
               >
@@ -359,13 +374,13 @@ const ChatScreen = ({ onSendMessage = () => {} }) => {
 // ─────────────────────────────────────────────────────────────
 const styles = {
 
-  // Full-viewport white shell
+  // Full-viewport shell
   shell: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100dvh',      // dvh handles mobile browser chrome bar
+    height: '100dvh',
     width: '100%',
-    background: '#FFFFFF',
+    background: 'var(--bg-primary)',
     overflow: 'hidden',
   },
 
@@ -373,30 +388,43 @@ const styles = {
   header: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: 10,
+    justifyContent: 'space-between',
     padding: '14px 20px',
-    borderBottom: '1px solid #E5E7EB',
-    background: '#FFFFFF',
+    borderBottom: '1px solid var(--border-color)',
+    background: 'var(--bg-secondary)',
     flexShrink: 0,
+    boxShadow: 'var(--shadow-soft)',
+    zIndex: 10,
   },
   headerTitle: {
     fontSize: 16,
     fontWeight: 600,
-    color: '#111827',
+    color: 'var(--text-primary)',
     letterSpacing: '-0.01em',
   },
   modelBadge: {
     fontSize: 11,
     fontWeight: 500,
-    color: '#6B7280',
-    background: '#F3F4F6',
-    padding: '2px 8px',
+    color: 'var(--text-secondary)',
+    background: 'var(--bg-primary)',
+    padding: '4px 10px',
     borderRadius: 20,
-    border: '1px solid #E5E7EB',
+    border: '1px solid var(--border-color)',
+  },
+  themeToggleBtn: {
+    background: 'transparent',
+    border: 'none',
+    fontSize: 18,
+    cursor: 'pointer',
+    padding: '4px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: 'transform 0.2s',
   },
 
-  // Scrollable message pane – centred like ChatGPT
+  // Scrollable message pane
   messageList: {
     flex: 1,
     overflowY: 'auto',
@@ -415,37 +443,38 @@ const styles = {
   msgRow: {
     display: 'flex',
     alignItems: 'flex-end',
-    gap: 8,
+    gap: 12,
     width: '100%',
   },
 
   // Small circular AI icon
   aiIcon: {
-    width: 30,
-    height: 30,
+    width: 32,
+    height: 32,
     borderRadius: '50%',
-    background: '#111827',
-    color: '#FFFFFF',
-    fontSize: 10,
+    background: 'var(--ai-icon-bg)',
+    color: 'var(--ai-icon-text)',
+    fontSize: 11,
     fontWeight: 700,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
     letterSpacing: '0.03em',
+    boxShadow: 'var(--shadow-bubble)',
   },
 
   // Bubble + timestamp column
   bubbleCol: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 4,
-    maxWidth: '75%',   // cap width to 75% of the pane
+    gap: 6,
+    maxWidth: '80%',
   },
 
-  // Bubble itself (bg/color/radius overridden per sender above)
+  // Bubble itself
   bubble: {
-    padding: '10px 15px',
+    padding: '12px 16px',
     fontSize: 15,
     lineHeight: 1.6,
     wordBreak: 'break-word',
@@ -455,7 +484,7 @@ const styles = {
   // Timestamp
   timestamp: {
     fontSize: 11,
-    color: '#9CA3AF',
+    color: 'var(--text-secondary)',
     padding: '0 4px',
   },
 
@@ -463,29 +492,30 @@ const styles = {
   typingWrap: {
     display: 'flex',
     alignItems: 'center',
-    gap: 10,
+    gap: 12,
   },
   dotsRow: {
     display: 'flex',
     gap: 5,
-    padding: '12px 16px',
-    background: '#F4F4F4',
+    padding: '14px 18px',
+    background: 'var(--bubble-ai-bg)',
     borderRadius: '18px 18px 18px 4px',
+    boxShadow: 'var(--shadow-bubble)',
   },
   dot: {
     width: 8,
     height: 8,
     borderRadius: '50%',
-    background: '#9CA3AF',
+    background: 'var(--text-secondary)',
     display: 'inline-block',
     animation: 'bounce 1.2s infinite ease-in-out',
   },
 
-  // Compose outer (centred, same max-width as messages)
+  // Compose outer
   composeOuter: {
     flexShrink: 0,
     padding: '12px 16px 16px',
-    background: '#FFFFFF',
+    background: 'transparent', // Make it transparent to let the primary background show
     maxWidth: 768,
     width: '100%',
     margin: '0 auto',
@@ -495,19 +525,20 @@ const styles = {
   composeForm: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 6,
+    gap: 8,
   },
 
-  // Rounded pill compose box
+  // Rounded pill compose box with glassmorphism
   composeBox: {
     display: 'flex',
     alignItems: 'flex-end',
-    gap: 8,
-    background: '#F4F4F4',
-    border: '1px solid #E5E7EB',
-    borderRadius: 16,
-    padding: '10px 10px 10px 16px',
-    transition: 'border-color 0.2s, box-shadow 0.2s',
+    gap: 10,
+    background: 'var(--compose-bg)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 24,
+    padding: '12px 12px 12px 20px',
+    transition: 'border-color 0.3s, box-shadow 0.3s',
+    boxShadow: 'var(--shadow-soft)',
   },
 
   // Textarea inside the pill
@@ -519,44 +550,44 @@ const styles = {
     outline: 'none',
     fontFamily: 'inherit',
     fontSize: 15,
-    color: '#111827',
+    color: 'var(--text-primary)',
     lineHeight: 1.55,
-    padding: '2px 0',
+    padding: '4px 0',
     overflowY: 'hidden',
     maxHeight: 160,
   },
 
   // Send button (▲)
   sendBtn: {
-    width: 36,
-    height: 36,
-    borderRadius: 10,
+    width: 40,
+    height: 40,
+    borderRadius: 16,
     border: 'none',
-    color: '#FFFFFF',
+    color: 'var(--send-btn-text)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
-    transition: 'background 0.15s',
+    transition: 'background 0.2s, transform 0.1s',
   },
 
   // Hint + character counter row
   hintRow: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '0 4px',
+    padding: '0 12px',
   },
   hint: {
     fontSize: 11,
-    color: '#9CA3AF',
+    color: 'var(--text-secondary)',
   },
 
   // Footer disclaimer
   disclaimer: {
     textAlign: 'center',
     fontSize: 12,
-    color: '#9CA3AF',
-    marginTop: 8,
+    color: 'var(--text-secondary)',
+    marginTop: 12,
   },
 };
 
