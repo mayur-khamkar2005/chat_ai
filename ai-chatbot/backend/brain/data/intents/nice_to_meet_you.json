@@ -1,7 +1,37 @@
 {
-  "intent": "NICE TO MEET YOU",
+  "intent": "NICE_TO_MEET_YOU",
   "patterns": [
-    "\\bnice to meet you\\b"
+    "\\bnice\\s+to\\s+meet\\s+you\\b",
+    "\\bnice\\s+meeting\\s+you\\b",
+    "\\bgreat\\s+to\\s+meet\\s+you\\b",
+    "\\bgood\\s+to\\s+meet\\s+you\\b",
+    "\\bpleased\\s+to\\s+meet\\s+you\\b",
+    "\\bpleasure\\s+to\\s+meet\\s+you\\b",
+    "\\bit'?s\\s+a\\s+pleasure\\s+to\\s+meet\\s+you\\b",
+    "\\bhappy\\s+to\\s+meet\\s+you\\b",
+    "\\bglad\\s+to\\s+meet\\s+you\\b",
+    "\\bdelighted\\s+to\\s+meet\\s+you\\b",
+    "\\bnice\\s+to\\s+know\\s+you\\b",
+    "\\bgood\\s+to\\s+know\\s+you\\b",
+    "\\bnice\\s+meeting\\s+ya\\b",
+    "\\bnice\\s+to\\s+see\\s+you\\b",
+    "\\bgreat\\s+to\\s+see\\s+you\\b",
+    "\\bgood\\s+to\\s+see\\s+you\\b",
+    "\\blovely\\s+to\\s+meet\\s+you\\b",
+    "\\bhonor(ed)?\\s+to\\s+meet\\s+you\\b",
+    "\\bnice\\s+to\\s+finally\\s+meet\\s+you\\b",
+    "\\bfinally\\s+nice\\s+to\\s+meet\\s+you\\b"
   ],
-  "responses": ["nice to meet you to sir"]
+  "responses": [
+  "Nice to meet you too! 😊",
+  "It's a pleasure to meet you!",
+  "Likewise! 👋",
+  "Happy to meet you too!",
+  "The pleasure is mine.",
+  "Great meeting you!",
+  "I'm glad we met.",
+  "Looking forward to our conversation!",
+  "Wonderful to meet you!",
+  "Hope we have a great chat!"
+]
 }
