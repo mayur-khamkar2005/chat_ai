@@ -1,0 +1,17 @@
+{
+  "intent": "JAVASCRIPT",
+  "priority": 43,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles JavaScript-related questions.",
+  "patterns": [
+    "\\b(javascript|js|node|array|object|promise|async|await|map|filter)\\b"
+  ],
+  "responses": [
+    "JavaScript is a flexible language for web and server-side development.",
+    "I can help explain arrays, objects, promises, async functions, and closures.",
+    "If you want, I can help you write or debug a JavaScript snippet.",
+    "JavaScript is great for building interactive applications."
+  ],
+  "version": "1.0"
+}

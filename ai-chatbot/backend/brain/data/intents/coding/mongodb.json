@@ -1,0 +1,17 @@
+{
+  "intent": "MONGODB",
+  "priority": 38,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles MongoDB database questions.",
+  "patterns": [
+    "\\b(mongodb|mongo db|database|collection|document|schema)\\b"
+  ],
+  "responses": [
+    "MongoDB is a document-based database often used with Node.js applications.",
+    "I can help explain collections, documents, and simple queries.",
+    "If you need help designing a schema, I can assist.",
+    "MongoDB works well for flexible and scalable document storage."
+  ],
+  "version": "1.0"
+}

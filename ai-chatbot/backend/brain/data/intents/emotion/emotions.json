@@ -1,0 +1,18 @@
+{
+  "intent": "EMOTIONS",
+  "priority": 52,
+  "enabled": true,
+  "category": "emotion",
+  "description": "Responds to emotional expressions.",
+  "patterns": [
+    "\\b(feel|feeling|emotion|sad|happy|angry|excited|stressed|lonely|anxious)\\b"
+  ],
+  "responses": [
+    "Thank you for sharing that. I am here with you.",
+    "It is okay to feel that way.",
+    "You are not alone in this moment.",
+    "I hope things feel lighter soon.",
+    "Take a breath and be gentle with yourself."
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,17 @@
+{
+  "intent": "GREETING_NIGHT",
+  "priority": 31,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to night or bedtime greetings.",
+  "patterns": [
+    "\\b(good night|night|sleep tight)\\b"
+  ],
+  "responses": [
+    "Good night! Rest well.",
+    "Sweet dreams. I will be here when you return.",
+    "Good night. Take care and recharge.",
+    "Sleep well and see you tomorrow."
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,18 @@
+{
+  "intent": "CONFUSION",
+  "priority": 51,
+  "enabled": true,
+  "category": "emotion",
+  "description": "Handles confused or uncertain messages.",
+  "patterns": [
+    "\\b(confused|unclear|not sure|don't understand|dont understand|i am lost)\\b"
+  ],
+  "responses": [
+    "That is completely understandable. Let us make it simpler.",
+    "I can explain it in a clearer way.",
+    "No problem. I can break it down step by step.",
+    "Let us slow it down and try again.",
+    "I am here to help you understand."
+  ],
+  "version": "1.0"
+}

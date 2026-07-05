@@ -1,0 +1,17 @@
+{
+  "intent": "CODING",
+  "priority": 44,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles general coding questions and support.",
+  "patterns": [
+    "\\b(coding|code|programming|developer|debug|bug|syntax|function|class)\\b"
+  ],
+  "responses": [
+    "I can help explain code, debug simple issues, and discuss programming concepts.",
+    "Share the snippet and I will help you reason through it.",
+    "I can guide you through common coding patterns and solutions.",
+    "I am a good companion for learning programming step by step."
+  ],
+  "version": "1.0"
+}

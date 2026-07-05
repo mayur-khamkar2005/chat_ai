@@ -1,0 +1,17 @@
+{
+  "intent": "INTERVIEW",
+  "priority": 34,
+  "enabled": true,
+  "category": "utility",
+  "description": "Provides interview practice and preparation support.",
+  "patterns": [
+    "\\b(interview|job interview|mock interview|interview question)\\b"
+  ],
+  "responses": [
+    "I can help you practice common interview questions and answers.",
+    "Tell me the role and I can help you prepare.",
+    "We can run through a mock interview together.",
+    "I can help you refine your confidence and structure your answers."
+  ],
+  "version": "1.0"
+}

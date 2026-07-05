@@ -1,0 +1,18 @@
+{
+  "intent": "NO",
+  "priority": 61,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Handles negative replies.",
+  "patterns": [
+    "\\b(no|nope|nah|not really|probably not)\\b"
+  ],
+  "responses": [
+    "No problem. We can try something else.",
+    "That is alright. I can help differently.",
+    "Understood. Let us adjust our approach.",
+    "No worries. We can take another path.",
+    "Alright, we can skip that."
+  ],
+  "version": "1.0"
+}

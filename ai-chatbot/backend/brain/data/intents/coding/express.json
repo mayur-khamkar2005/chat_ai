@@ -1,0 +1,17 @@
+{
+  "intent": "EXPRESS",
+  "priority": 37,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Express.js framework questions.",
+  "patterns": [
+    "\\b(express|middleware|route|api|rest api|endpoint)\\b"
+  ],
+  "responses": [
+    "Express.js is a minimal web framework for Node.js.",
+    "I can help explain routes, middleware, and API design.",
+    "If you are building a backend, Express is a strong foundation.",
+    "I can help you structure a simple REST API."
+  ],
+  "version": "1.0"
+}

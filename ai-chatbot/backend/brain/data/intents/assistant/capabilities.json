@@ -1,0 +1,17 @@
+{
+  "intent": "CAPABILITIES",
+  "priority": 56,
+  "enabled": true,
+  "category": "assistant",
+  "description": "Explains what the assistant can do.",
+  "patterns": [
+    "\\b(what can you do|what are your capabilities|how can you help|what skills do you have)\\b"
+  ],
+  "responses": [
+    "I can help with greetings, coding questions, basic knowledge, and conversation.",
+    "I can assist with simple explanations, coding help, and everyday chat.",
+    "I can help answer questions about JavaScript, React, Node.js, HTML, CSS, and more.",
+    "I am here to support learning, troubleshooting, and friendly conversation."
+  ],
+  "version": "1.0"
+}

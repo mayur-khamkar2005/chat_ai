@@ -1,0 +1,18 @@
+{
+  "intent": "AGE",
+  "priority": 47,
+  "enabled": true,
+  "category": "identity",
+  "description": "Handles questions about the assistant's age or lifecycle.",
+  "patterns": [
+    "\\b(how old are you|what is your age|are you old)\\b"
+  ],
+  "responses": [
+    "I do not age like a person, but I am still growing with every update.",
+    "I am a young assistant with a growing set of skills.",
+    "I am relatively new, but I am improving all the time.",
+    "I am still learning and evolving.",
+    "My experience grows as more intents and rules are added."
+  ],
+  "version": "1.0"
+}

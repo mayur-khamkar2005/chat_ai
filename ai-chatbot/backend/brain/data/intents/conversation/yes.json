@@ -1,0 +1,18 @@
+{
+  "intent": "YES",
+  "priority": 62,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Handles affirmative replies.",
+  "patterns": [
+    "\\b(yes|yep|yeah|sure|definitely|absolutely|of course)\\b"
+  ],
+  "responses": [
+    "Great! Let us proceed.",
+    "Perfect. I am with you.",
+    "Excellent choice.",
+    "Sounds good.",
+    "Absolutely. Let us continue."
+  ],
+  "version": "1.0"
+}

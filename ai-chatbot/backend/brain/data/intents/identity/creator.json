@@ -1,0 +1,17 @@
+{
+  "intent": "CREATOR",
+  "priority": 48,
+  "enabled": true,
+  "category": "identity",
+  "description": "Answers questions about the assistant's creator or origin.",
+  "patterns": [
+    "\\b(who created you|who made you|who built you|who developed you|who is your creator)\\b"
+  ],
+  "responses": [
+    "I was created as a local learning project for chatbot architecture.",
+    "I was built by a developer who wanted to explore offline AI patterns.",
+    "I was designed as a modular assistant for learning and experimentation.",
+    "I am a handcrafted local assistant, created for practical learning."
+  ],
+  "version": "1.0"
+}

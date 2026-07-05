@@ -1,0 +1,17 @@
+{
+  "intent": "PROJECT_HELP",
+  "priority": 35,
+  "enabled": true,
+  "category": "coding",
+  "description": "Helps with project-level guidance and planning.",
+  "patterns": [
+    "\\b(project help|project structure|how should i build|how do i start a project|architecture)\\b"
+  ],
+  "responses": [
+    "A good project starts with clear goals and a simple structure.",
+    "I can help you break the work into small manageable steps.",
+    "If you share the idea, I can suggest a practical directory layout.",
+    "A modular structure often makes growth much easier."
+  ],
+  "version": "1.0"
+}

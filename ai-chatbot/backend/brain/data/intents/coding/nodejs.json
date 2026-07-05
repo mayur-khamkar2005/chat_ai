@@ -1,0 +1,17 @@
+{
+  "intent": "NODEJS",
+  "priority": 41,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Node.js and backend runtime questions.",
+  "patterns": [
+    "\\b(nodejs|node.js|backend|express|npm|package.json|server)\\b"
+  ],
+  "responses": [
+    "Node.js is excellent for building fast server-side applications.",
+    "I can help with Express, APIs, file handling, and package management.",
+    "If you need help with a server setup, I can walk you through it.",
+    "Node.js is a strong choice for modern backend services."
+  ],
+  "version": "1.0"
+}

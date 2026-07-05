@@ -1,0 +1,18 @@
+{
+  "intent": "UNKNOWN",
+  "priority": 1,
+  "enabled": true,
+  "category": "fallback",
+  "description": "Fallback intent for unmatched messages.",
+  "patterns": [
+    ".*"
+  ],
+  "responses": [
+    "I am not sure I understood that. Could you rephrase it?",
+    "I can help, but I need a little more context.",
+    "Could you say that in a simpler way?",
+    "I am still learning. Please try another phrasing.",
+    "I did not catch that. Ask me in a different way."
+  ],
+  "version": "1.0"
+}

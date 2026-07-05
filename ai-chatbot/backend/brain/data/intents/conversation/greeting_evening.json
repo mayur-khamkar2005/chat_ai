@@ -1,0 +1,17 @@
+{
+  "intent": "GREETING_EVENING",
+  "priority": 32,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to evening greetings.",
+  "patterns": [
+    "\\b(good evening|evening)\\b"
+  ],
+  "responses": [
+    "Good evening! I hope your day went well.",
+    "Evening! I am glad you are here.",
+    "Good evening. How can I help tonight?",
+    "Hello. Wishing you a calm evening."
+  ],
+  "version": "1.0"
+}

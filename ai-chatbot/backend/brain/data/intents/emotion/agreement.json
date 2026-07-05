@@ -1,0 +1,18 @@
+{
+  "intent": "AGREEMENT",
+  "priority": 50,
+  "enabled": true,
+  "category": "emotion",
+  "description": "Handles agreement and acceptance.",
+  "patterns": [
+    "\\b(agree|agreed|i agree|that makes sense|sounds right)\\b"
+  ],
+  "responses": [
+    "Great. I am glad that makes sense.",
+    "Perfect. We are on the same page.",
+    "Excellent. Let us continue.",
+    "That is a good agreement.",
+    "Wonderful. I appreciate your confirmation."
+  ],
+  "version": "1.0"
+}

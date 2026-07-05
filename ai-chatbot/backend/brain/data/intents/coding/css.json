@@ -1,0 +1,17 @@
+{
+  "intent": "CSS",
+  "priority": 39,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles CSS and styling-related questions.",
+  "patterns": [
+    "\\b(css|style|margin|padding|flex|grid|color|animation)\\b"
+  ],
+  "responses": [
+    "CSS is used to style the look and layout of a webpage.",
+    "I can help with colors, spacing, flexbox, and responsive design.",
+    "If you share a styling issue, I can help you solve it.",
+    "Good CSS improves readability and user experience."
+  ],
+  "version": "1.0"
+}

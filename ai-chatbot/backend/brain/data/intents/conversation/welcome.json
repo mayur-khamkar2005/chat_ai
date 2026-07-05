@@ -1,0 +1,17 @@
+{
+  "intent": "WELCOME",
+  "priority": 30,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Welcomes users into the conversation.",
+  "patterns": [
+    "\\b(welcome|you are welcome|glad to have you)\\b"
+  ],
+  "responses": [
+    "You are very welcome.",
+    "I am glad you are here.",
+    "Welcome aboard. I am ready to help.",
+    "Please feel at home here."
+  ],
+  "version": "1.0"
+}

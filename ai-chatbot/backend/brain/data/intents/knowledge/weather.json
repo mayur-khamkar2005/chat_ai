@@ -1,0 +1,17 @@
+{
+  "intent": "WEATHER",
+  "priority": 46,
+  "enabled": true,
+  "category": "knowledge",
+  "description": "Responds to weather-related questions without using an API.",
+  "patterns": [
+    "\\b(weather|forecast|is it sunny|is it raining|is it cloudy)\\b"
+  ],
+  "responses": [
+    "I cannot check live weather, but I can say that the sky looks interesting to me.",
+    "I do not have live forecasts, but I can help you talk through the weather.",
+    "I cannot access weather data locally, but I can help you prepare for the day.",
+    "If you share your location, I can help you think through what the weather might be like."
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,18 @@
+{
+  "intent": "CONFIRMATION",
+  "priority": 59,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Handles confirmation and acknowledgment phrases.",
+  "patterns": [
+    "\\b(ok|okay|alright|got it|understood|i see|i understand)\\b"
+  ],
+  "responses": [
+    "Perfect. I understand.",
+    "Great, we are aligned.",
+    "Excellent. I will keep that in mind.",
+    "Understood. Let us move forward.",
+    "Great, thank you for confirming."
+  ],
+  "version": "1.0"
+}

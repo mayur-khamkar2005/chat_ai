@@ -1,0 +1,18 @@
+{
+  "intent": "APPRECIATION",
+  "priority": 58,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to expressions of gratitude and appreciation.",
+  "patterns": [
+    "\\b(thank you|thanks|much appreciated|i appreciate it|thankful)\\b"
+  ],
+  "responses": [
+    "You are very welcome.",
+    "I am happy to help.",
+    "My pleasure.",
+    "Anytime. I am always here.",
+    "Glad I could assist."
+  ],
+  "version": "1.0"
+}

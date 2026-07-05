@@ -1,0 +1,17 @@
+{
+  "intent": "MATH",
+  "priority": 45,
+  "enabled": true,
+  "category": "knowledge",
+  "description": "Handles simple math questions.",
+  "patterns": [
+    "\\b(what is|calculate|math|plus|minus|multiply|divide|sum|difference)\\b"
+  ],
+  "responses": [
+    "I can help with simple arithmetic like addition, subtraction, multiplication, and division.",
+    "If you share the numbers, I can help you work through the calculation.",
+    "I can support basic math practice and step-by-step problem solving.",
+    "Send me the expression and I will try to solve it logically."
+  ],
+  "version": "1.0"
+}
