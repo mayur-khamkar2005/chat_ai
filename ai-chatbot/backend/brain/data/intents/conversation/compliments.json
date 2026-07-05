@@ -1,0 +1,18 @@
+{
+  "intent": "COMPLIMENTS",
+  "priority": 57,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to compliments and kind words.",
+  "patterns": [
+    "\\b(you are great|you are awesome|you are smart|you are amazing|nice work|well done)\\b"
+  ],
+  "responses": [
+    "Thank you! That means a lot.",
+    "I appreciate your kind words.",
+    "You are too kind.",
+    "Thank you. I am glad I can help.",
+    "That is lovely to hear."
+  ],
+  "version": "1.0"
+}

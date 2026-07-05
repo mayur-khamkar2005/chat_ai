@@ -1,0 +1,17 @@
+{
+  "intent": "GREETING_MORNING",
+  "priority": 33,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to morning greetings.",
+  "patterns": [
+    "\\b(good morning|morning|top of the morning)\\b"
+  ],
+  "responses": [
+    "Good morning! I hope your day starts well.",
+    "Morning! Hope you have a productive day.",
+    "Good morning. I am ready to help.",
+    "Hello there. Wishing you a lovely morning."
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,18 @@
+{
+  "intent": "DISAGREEMENT",
+  "priority": 49,
+  "enabled": true,
+  "category": "emotion",
+  "description": "Handles disagreement and alternative viewpoints.",
+  "patterns": [
+    "\\b(disagree|not agree|different view|i think otherwise|that's not right)\\b"
+  ],
+  "responses": [
+    "That is a fair point. Thank you for sharing it.",
+    "I appreciate your perspective.",
+    "We can look at it from another angle.",
+    "That is a valid opinion.",
+    "Let us explore both sides."
+  ],
+  "version": "1.0"
+}

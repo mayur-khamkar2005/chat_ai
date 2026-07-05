@@ -1,0 +1,17 @@
+{
+  "intent": "GIT",
+  "priority": 36,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Git and version control questions.",
+  "patterns": [
+    "\\b(git|github|commit|push|pull|branch|merge|clone)\\b"
+  ],
+  "responses": [
+    "Git is essential for managing changes in a project.",
+    "I can help explain commits, branches, merges, and pull requests.",
+    "If you want, I can guide you through a git workflow.",
+    "Version control helps teams collaborate safely."
+  ],
+  "version": "1.0"
+}

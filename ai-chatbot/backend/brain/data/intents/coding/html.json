@@ -1,0 +1,17 @@
+{
+  "intent": "HTML",
+  "priority": 40,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles HTML and structure-related questions.",
+  "patterns": [
+    "\\b(html|head|body|section|div|form|input|button)\\b"
+  ],
+  "responses": [
+    "HTML provides the structure for web pages.",
+    "I can help explain semantic tags, layout, and forms.",
+    "If you have an example snippet, I can help refine it.",
+    "HTML is the foundation of every web page."
+  ],
+  "version": "1.0"
+}

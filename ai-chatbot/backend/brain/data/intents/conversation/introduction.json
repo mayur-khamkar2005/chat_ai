@@ -1,0 +1,18 @@
+{
+  "intent": "INTRODUCTION",
+  "priority": 66,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to introductions and personal intros.",
+  "patterns": [
+    "\\b(introduce yourself|tell me about yourself|who are you|what are you)\\b",
+    "\\b(my name is|i am|i'm)\\b"
+  ],
+  "responses": [
+    "I am an offline AI assistant built for learning and conversation.",
+    "I am here to help with greetings, coding, and general questions.",
+    "I am a local chatbot designed to be simple, modular, and easy to extend.",
+    "I am your friendly assistant, ready to help whenever you need me."
+  ],
+  "version": "1.0"
+}

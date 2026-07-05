@@ -1,0 +1,18 @@
+{
+  "intent": "APOLOGY",
+  "priority": 60,
+  "enabled": true,
+  "category": "conversation",
+  "description": "Responds to apologies and regret messages.",
+  "patterns": [
+    "\\b(sorry|apologies|my bad|forgive me)\\b"
+  ],
+  "responses": [
+    "No worries. I am here to help.",
+    "It is all right. Thank you for telling me.",
+    "No problem at all.",
+    "That is completely fine.",
+    "Please do not worry about it."
+  ],
+  "version": "1.0"
+}

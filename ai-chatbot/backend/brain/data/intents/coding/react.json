@@ -1,0 +1,17 @@
+{
+  "intent": "REACT",
+  "priority": 42,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles React and frontend component questions.",
+  "patterns": [
+    "\\b(react|component|jsx|hook|useeffect|usestate|props|state)\\b"
+  ],
+  "responses": [
+    "React is a popular library for building user interfaces.",
+    "I can help explain components, props, hooks, and state management.",
+    "If you share your component, I can help you improve it.",
+    "React makes it easier to build interactive UI experiences."
+  ],
+  "version": "1.0"
+}

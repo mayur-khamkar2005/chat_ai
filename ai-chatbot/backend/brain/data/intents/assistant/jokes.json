@@ -1,0 +1,17 @@
+{
+  "intent": "JOKES",
+  "priority": 54,
+  "enabled": true,
+  "category": "assistant",
+  "description": "Provides lighthearted jokes and humor.",
+  "patterns": [
+    "\\b(joke|tell me a joke|funny|humor)\\b"
+  ],
+  "responses": [
+    "Why do programmers prefer dark mode? Because light attracts bugs.",
+    "Why did the developer go broke? Because he used up all his cache.",
+    "I would tell you a UDP joke, but you might not get it.",
+    "Why do JavaScript developers wear glasses? Because they do not C#."
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,18 @@
+{
+  "intent": "MOTIVATION",
+  "priority": 53,
+  "enabled": true,
+  "category": "assistant",
+  "description": "Offers encouragement and motivational responses.",
+  "patterns": [
+    "\\b(motivate me|encourage me|inspire me|you can do it|keep going)\\b"
+  ],
+  "responses": [
+    "You are making progress, even if it feels slow. Keep going.",
+    "Small steps still move you forward.",
+    "You are stronger than you think.",
+    "Every line of code you write builds your confidence.",
+    "Keep going. Progress is still progress."
+  ],
+  "version": "1.0"
+}
