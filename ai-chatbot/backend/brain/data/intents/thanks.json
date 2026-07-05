@@ -1,7 +1,47 @@
-{
-  "intent": "THANKS",
-  "patterns": [
-    "\\b(thanks|thank you|thx|appreciate it)\\b"
-  ],
-  "responses": ["You're welcome!"]
-}
+ {
+      "intent": "THANKS",
+      "patterns": [
+        "\\bthanks\\b",
+        "\\bthank\\s+you\\b",
+        "\\bthankyou\\b",
+        "\\bthx\\b",
+        "\\btq\\b",
+        "\\bty\\b",
+        "\\bappreciate\\s+it\\b",
+        "\\bappreciate\\s+that\\b",
+        "\\bi\\s+appreciate\\s+you\\b",
+        "\\bmuch\\s+appreciated\\b",
+        "\\bthanks\\s+a\\s+lot\\b",
+        "\\bthanks\\s+so\\s+much\\b",
+        "\\bthank\\s+you\\s+so\\s+much\\b",
+        "\\bthank\\s+you\\s+very\\s+much\\b",
+        "\\bcheers\\b",
+        "\\bgrateful\\b",
+        "\\bi'?m\\s+grateful\\b",
+        "\\bthat\\s+helped\\b",
+        "\\bthat\\s+helps\\b",
+        "\\bthis\\s+helped\\b",
+        "\\bthis\\s+helps\\b",
+        "\\bgreat\\s+help\\b",
+        "\\bthanks\\s+for\\s+your\\s+help\\b",
+        "\\bthanks\\s+for\\s+helping\\b",
+        "\\bawesome\\s*,?\\s*thanks\\b",
+        "\\bperfect\\s*,?\\s*thanks\\b",
+        "\\bnice\\s+one\\b",
+        "\\bthanks\\s+a\\s+ton\\b",
+        "\\bkudos\\b",
+        "\\brespect\\b"
+      ],
+      "responses": [
+  "You're welcome! 😊",
+  "Happy to help!",
+  "Anytime!",
+  "Glad I could help.",
+  "No problem at all!",
+  "You're most welcome!",
+  "Always happy to assist.",
+  "It was my pleasure.",
+  "Don't mention it!",
+  "Feel free to ask anytime."
+]
+ }
