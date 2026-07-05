@@ -1,5 +1,9 @@
 {
   "intent": "NICE_TO_MEET_YOU",
+  "priority": 100,
+  "enabled": true,
+  "category": "moderation",
+  "description": "Detects abusive, offensive and disrespectful language",
   "patterns": [
     "\\bnice\\s+to\\s+meet\\s+you\\b",
     "\\bnice\\s+meeting\\s+you\\b",
@@ -23,15 +27,15 @@
     "\\bfinally\\s+nice\\s+to\\s+meet\\s+you\\b"
   ],
   "responses": [
-  "Nice to meet you too! 😊",
-  "It's a pleasure to meet you!",
-  "Likewise! 👋",
-  "Happy to meet you too!",
-  "The pleasure is mine.",
-  "Great meeting you!",
-  "I'm glad we met.",
-  "Looking forward to our conversation!",
-  "Wonderful to meet you!",
-  "Hope we have a great chat!"
-]
+    "Nice to meet you too! 😊",
+    "It's a pleasure to meet you!",
+    "Likewise! 👋",
+    "Happy to meet you too!",
+    "The pleasure is mine.",
+    "Great meeting you!",
+    "I'm glad we met.",
+    "Looking forward to our conversation!",
+    "Wonderful to meet you!",
+    "Hope we have a great chat!"
+  ]
 }
