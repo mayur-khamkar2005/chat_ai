@@ -1,0 +1,16 @@
+{
+  "intent": "MONGODB_QUERY_AGGREGATE",
+  "priority": 100,
+  "enabled": true,
+  "category": "coding",
+  "description": "Explains MongoDB aggregation pipeline.",
+  "patterns": [
+    "\\bhow\\s+to\\s+use\\s+aggregation\\s+pipeline\\b",
+    "\\bmongodb\\s+aggregate\\b",
+    "\\bgroup\\s+and\\s+sort\\s+in\\s+mongodb\\b"
+  ],
+  "responses": [
+    "The MongoDB Aggregation Pipeline processes documents through multiple stages, transforming them into aggregated results.\n\n**Basic Pipeline Example:**\n```javascript\nconst results = await Order.aggregate([\n  // Stage 1: Filter documents\n  { $match: { status: 'completed' } },\n  \n  // Stage 2: Group by customerId and sum the totalAmount\n  { $group: { \n      _id: '$customerId', \n      totalSpent: { $sum: '$totalAmount' } \n  } },\n  \n  // Stage 3: Sort by totalSpent descending\n  { $sort: { totalSpent: -1 } },\n  \n  // Stage 4: Limit to top 10\n  { $limit: 10 }\n]);\n```\n**Common Stages:**\n- `$match`: Filters documents.\n- `$group`: Groups documents by `_id`.\n- `$project`: Includes, excludes, or transforms fields.\n- `$lookup`: Performs a left outer join."
+  ],
+  "version": "1.0"
+}

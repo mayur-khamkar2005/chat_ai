@@ -1,0 +1,16 @@
+{
+  "intent": "REACT_HOOKS_USEEFFECT_INFINITE_LOOP",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Too many re-renders and useEffect infinite loops.",
+  "patterns": [
+    "\\bmaximum\\s+update\\s+depth\\s+exceeded\\b",
+    "\\buseeffect\\s+infinite\\s+loop\\b",
+    "\\btoo\\s+many\\s+re-renders\\b"
+  ],
+  "responses": [
+    "The 'Too many re-renders' or 'Maximum update depth exceeded' error usually happens when state is updated directly during render or infinitely inside a `useEffect`.\n\n**1. Direct state update during render:**\n❌ `onClick={setCount(count + 1)}` (Calls immediately during render)\n✅ `onClick={() => setCount(count + 1)}` (Passed as a callback)\n\n**2. Missing or Incorrect Dependency Array in `useEffect`:**\nIf you update state inside `useEffect` and omit the dependency array, it runs on every render, triggering an infinite loop.\n❌ `useEffect(() => { setData(fetchData()) })`\n✅ `useEffect(() => { setData(fetchData()) }, [])`\n\n**3. Objects/Arrays as Dependencies:**\nObjects and arrays are reference types. If defined inside the component, their reference changes every render, causing the effect to re-run.\n✅ Use `useMemo` or move the object outside the component."
+  ],
+  "version": "1.0"
+}

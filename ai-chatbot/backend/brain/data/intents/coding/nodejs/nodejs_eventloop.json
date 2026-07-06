@@ -1,0 +1,16 @@
+{
+  "intent": "NODEJS_RUNTIME_EVENT_LOOP",
+  "priority": 80,
+  "enabled": true,
+  "category": "coding",
+  "description": "Explains the Node.js event loop.",
+  "patterns": [
+    "\\bhow\\s+does\\s+the\\s+event\\s+loop\\s+work\\b",
+    "\\bnodejs\\s+event\\s+loop\\s+explained\\b",
+    "\\bevent\\s+loop\\s+phases\\b"
+  ],
+  "responses": [
+    "The Node.js **Event Loop** is what allows Node.js to perform non-blocking I/O operations despite being single-threaded. It offloads operations to the system kernel whenever possible.\n\nThe Event Loop has several phases:\n1. **Timers:** Executes callbacks scheduled by `setTimeout()` and `setInterval()`.\n2. **Pending Callbacks:** Executes I/O callbacks deferred to the next loop iteration.\n3. **Idle, Prepare:** Used internally only.\n4. **Poll:** Retrieves new I/O events; executes I/O related callbacks.\n5. **Check:** Executes `setImmediate()` callbacks.\n6. **Close Callbacks:** Executes close events, e.g., `socket.on('close', ...)`.\n\nBetween phases, Node executes the `nextTickQueue` and the `microtaskQueue` (Promises)."
+  ],
+  "version": "1.0"
+}

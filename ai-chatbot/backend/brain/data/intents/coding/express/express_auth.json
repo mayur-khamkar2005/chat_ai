@@ -1,0 +1,17 @@
+{
+  "intent": "EXPRESS_MIDDLEWARE_AUTH",
+  "priority": 100,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Express JWT authentication middleware setup.",
+  "patterns": [
+    "\\bhow\\s+to\\s+setup\\s+jwt\\s+auth(entication)?\\s+in\\s+express\\b",
+    "\\bexpress\\s+auth(entication)?\\s+middleware\\b",
+    "\\bprotect\\s+express\\s+routes\\b",
+    "\\bexpress\\s+jwt\\b"
+  ],
+  "responses": [
+    "To protect routes using JWT in Express, you need an authentication middleware that verifies the token.\n\n```javascript\nconst jwt = require('jsonwebtoken');\n\nconst authMiddleware = (req, res, next) => {\n  const token = req.header('Authorization')?.split(' ')[1];\n  if (!token) return res.status(401).json({ error: 'Access denied' });\n\n  try {\n    const verified = jwt.verify(token, process.env.JWT_SECRET);\n    req.user = verified;\n    next();\n  } catch (err) {\n    res.status(400).json({ error: 'Invalid token' });\n  }\n};\n\nmodule.exports = authMiddleware;\n```\nApply it to routes like this: `app.get('/protected', authMiddleware, (req, res) => { ... })`."
+  ],
+  "version": "1.0"
+}

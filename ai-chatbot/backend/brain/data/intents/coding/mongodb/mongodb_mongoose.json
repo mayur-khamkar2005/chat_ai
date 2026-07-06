@@ -1,0 +1,17 @@
+{
+  "intent": "MONGODB_ERRORS_MONGOOSE",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles Mongoose connection errors.",
+  "patterns": [
+    "\\bMongoTimeoutError\\b",
+    "\\bserver\\s+selection\\s+error\\b",
+    "\\bmongoose\\s+connection\\s+error\\b",
+    "\\bcannot\\s+connect\\s+to\\s+mongodb\\b"
+  ],
+  "responses": [
+    "A `MongooseServerSelectionError` or `MongoTimeoutError` means your Node.js app cannot reach your MongoDB database.\n\n**Troubleshooting Checklist:**\n1. **IP Whitelisting (MongoDB Atlas):** If using Atlas, ensure your current IP address (or `0.0.0.0/0` for testing) is added to the Network Access whitelist.\n2. **Connection String:** Verify your `MONGO_URI`. Ensure the username, password, and cluster name are correct. Special characters in passwords must be URL-encoded.\n3. **Local MongoDB:** If running locally, ensure the `mongod` service is running.\n4. **DNS Issues:** Node.js >17 prefers IPv6 by default. If your local DB binds to IPv4, change your URI from `localhost` to `127.0.0.1`.\n\nExample connection code:\n```javascript\nmongoose.connect(process.env.MONGO_URI, {\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n}).then(() => console.log('Connected!')).catch(err => console.error(err));\n```"
+  ],
+  "version": "1.0"
+}
