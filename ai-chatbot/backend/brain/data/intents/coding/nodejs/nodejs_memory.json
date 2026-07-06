@@ -1,0 +1,16 @@
+{
+  "intent": "NODEJS_MEMORY_LEAKS",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles out of memory errors in Node.js.",
+  "patterns": [
+    "\\bmemory\\s+leak\\s+in\\s+nodejs\\b",
+    "\\bnodejs\\s+out\\s+of\\s+memory\\b",
+    "\\bfatal\\s+error:\\s+javascript\\s+heap\\s+out\\s+of\\s+memory\\b"
+  ],
+  "responses": [
+    "The `JavaScript heap out of memory` error means your Node.js process has exceeded its allocated memory.\n\n**Immediate Fix:** Increase the memory limit using the `--max-old-space-size` flag (value is in MB).\n`node --max-old-space-size=4096 index.js`\n\n**How to debug memory leaks:**\n1. **Use Node Inspector:** Start your app with `node --inspect index.js`.\n2. **Chrome DevTools:** Open `chrome://inspect` in Chrome, connect to your Node target.\n3. **Memory Tab:** Take a Heap Snapshot. Run your load test, then take another snapshot.\n4. **Compare:** Use the 'Comparison' view to find which objects are growing unbounded.\n\n**Common culprits:** Global arrays caching data indefinitely, unclosed database connections, event listener leaks (`MaxListenersExceededWarning`), or closures holding onto large objects."
+  ],
+  "version": "1.0"
+}

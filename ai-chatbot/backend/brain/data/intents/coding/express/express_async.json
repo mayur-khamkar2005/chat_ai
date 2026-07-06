@@ -1,0 +1,16 @@
+{
+  "intent": "EXPRESS_ERRORS_ASYNC",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles async/await error handling in Express.",
+  "patterns": [
+    "\\bexpress\\s+unhandled\\s+promise\\s+rejection\\b",
+    "\\basync\\s+error\\s+handling\\s+in\\s+express\\b",
+    "\\bexpress\\s+app\\s+crashes\\s+on\\s+async\\b"
+  ],
+  "responses": [
+    "Express 4.x does not automatically catch errors in `async` route handlers. If an async function throws, the app might crash with an `UnhandledPromiseRejection`.\n\n**Fix 1: Use a wrapper function (Try/Catch)**\n```javascript\nconst asyncHandler = fn => (req, res, next) => {\n  Promise.resolve(fn(req, res, next)).catch(next);\n};\n\napp.get('/data', asyncHandler(async (req, res) => {\n  const data = await db.fetch();\n  res.json(data);\n}));\n```\n\n**Fix 2: Upgrade to Express 5.x**\nExpress 5 natively supports async/await error handling without needing wrappers like `express-async-errors`."
+  ],
+  "version": "1.0"
+}

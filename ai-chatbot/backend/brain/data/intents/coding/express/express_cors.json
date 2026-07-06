@@ -1,0 +1,18 @@
+{
+  "intent": "EXPRESS_ERRORS_CORS",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles CORS errors in Express.",
+  "patterns": [
+    "\\bblocked\\s+by\\s+CORS\\s+policy\\b",
+    "\\bNo\\s+'Access-Control-Allow-Origin'\\s+header\\b",
+    "\\bhow\\s+to\\s+fix\\s+cors\\s+in\\s+express\\b",
+    "\\bexpress\\s+cors\\s+error\\b",
+    "\\bcors\\s+error\\b"
+  ],
+  "responses": [
+    "CORS (Cross-Origin Resource Sharing) blocks requests from different origins by default. \n\nTo fix this in Express, install the `cors` package:\n`npm install cors`\n\nThen apply it globally or per-route:\n```javascript\nconst cors = require('cors');\nconst express = require('express');\nconst app = express();\n\n// Allow all origins\napp.use(cors());\n\n// Or restrict to specific origins\napp.use(cors({\n  origin: 'http://localhost:3000',\n  credentials: true\n}));\n```\nMake sure `app.use(cors())` is placed before your routes."
+  ],
+  "version": "1.0"
+}

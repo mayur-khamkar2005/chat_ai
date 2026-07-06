@@ -1,0 +1,16 @@
+{
+  "intent": "REACT_STATE_CONTEXT_VS_REDUX",
+  "priority": 80,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles comparisons between Context API and Redux.",
+  "patterns": [
+    "\\bdifference\\s+between\\s+context\\s+api\\s+and\\s+redux\\b",
+    "\\bwhen\\s+to\\s+use\\s+redux\\s+vs\\s+context\\b",
+    "\\bcontext\\s+api\\s+vs\\s+redux\\b"
+  ],
+  "responses": [
+    "**Context API vs Redux**\n\n**Context API** is built into React. It's great for passing data deeply through the component tree without prop drilling (e.g., themes, user auth state, language preferences).\n*Pros:* Built-in, zero bundle size overhead, simple setup.\n*Cons:* Can cause unnecessary re-renders if not optimized, as any state change re-renders all consumers.\n\n**Redux (Redux Toolkit)** is a robust state management library.\n*Pros:* Excellent DevTools, predictable state transitions, highly optimized rendering.\n*Cons:* Boilerplate, larger bundle size.\n\n**Recommendation:** Use Context for low-frequency updates like Theme/Auth. Use Redux (or Zustand) for complex, high-frequency, or heavily shared application state."
+  ],
+  "version": "1.0"
+}

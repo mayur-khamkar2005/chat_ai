@@ -1,0 +1,16 @@
+{
+  "intent": "EXPRESS_ERRORS_HEADERS",
+  "priority": 150,
+  "enabled": true,
+  "category": "coding",
+  "description": "Handles ERR_HTTP_HEADERS_SENT errors.",
+  "patterns": [
+    "\\bERR_HTTP_HEADERS_SENT\\b",
+    "\\bcannot\\s+set\\s+headers\\s+after\\s+they\\s+are\\s+sent\\b",
+    "\\bheaders\\s+already\\s+sent\\b"
+  ],
+  "responses": [
+    "The `ERR_HTTP_HEADERS_SENT` error occurs when you try to send a response (using `res.send()`, `res.json()`, `res.render()`, etc.) multiple times in a single request lifecycle.\n\n**Common Causes & Fixes:**\n1. **Missing `return` statement:** If you send a response in an `if` block, execution continues unless you return.\n   ```javascript\n   if (error) {\n     return res.status(400).json({ error: 'Bad Request' }); // Add 'return' here\n   }\n   res.json({ success: true });\n   ```\n2. **Callback vs Promises:** Ensure you aren't resolving a promise AND firing a callback that both send responses.\n3. **Async Loops:** Avoid sending responses inside `forEach` or `map` loops. Use `Promise.all` instead."
+  ],
+  "version": "1.0"
+}
